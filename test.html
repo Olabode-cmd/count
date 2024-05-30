@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Multiple Select with Checkboxes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .dropdown-content label {
+      display: block;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    .dropdown-content input {
+      margin-right: 8px;
+    }
+    .dropdown-content label:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown-btn {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+      text-align: left;
+      box-sizing: border-box;
+    }
+    .dropdown-btn::after {
+      content: '\25BC';
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <div class="dropdown-btn" id="dropdownBtn">Select Options</div>
+    <div class="dropdown-content" id="dropdownContent">
+      <label><input type="checkbox" value="Option1"> Option1</label>
+      <label><input type="checkbox" value="Option2"> Option2</label>
+      <label><input type="checkbox" value="Option3"> Option3</label>
+      <label><input type="checkbox" value="Option4"> Option4</label>
+      <label><input type="checkbox" value="Option5"> Option5</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="button" id="get-selected">Get Selected Values</button>
+  </div>
+
+  <div class="form-group">
+    <p id="selected-values"></p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#dropdownBtn').click(function() {
+        $('#dropdownContent').toggle();
+      });
+
+      $(document).mouseup(function(e) {
+        var container = $("#dropdownContent");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+          container.hide();
+        }
+      });
+
+      $('#get-selected').click(function() {
+        var selected = [];
+        $('#dropdownContent input:checked').each(function() {
+          selected.push($(this).val());
+        });
+        $('#selected-values').text('Selected values: ' + selected.join(', '));
+      });
+    });
+  </script>
+</body>
+</html>

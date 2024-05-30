@@ -1,0 +1,19 @@
+.inventory-menu,
+.warehouse-menu,
+.count-menu,
+.counter-menu {
+    display: none;
+}
+
+body.warehouse-manager .warehouse-menu {
+    display: block;
+}
+body.inventory-controller .inventory-menu {
+    display: block;
+}
+body.count-lead .count-menu {
+    display: block;
+}
+body.counter-manager .counter-menu {
+    display: block;
+}
