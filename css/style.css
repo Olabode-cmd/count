@@ -806,3 +806,6 @@ td {
   content: "\25BC";
   float: right;
 }
+.h-150 {
+  height: 150px !important;
+}

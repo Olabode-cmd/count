@@ -393,7 +393,6 @@
               class="modal fade"
               id="createModal"
               tabindex="-1"
-              role="dialog"
               aria-labelledby="createModalLabel"
               aria-hidden="true"
             >
@@ -405,17 +404,15 @@
                     </h5>
                     <button
                       type="button"
-                      class="btn d-inline-block"
-                      data-dismiss="modal"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
                       aria-label="Close"
-                    >
-                      <i class="fa fa-times"></i>
-                    </button>
+                    ></button>
                   </div>
                   <div class="modal-body">
                     <form>
-                      <div class="form-group">
-                        <label for="name">Name</label>
+                      <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
                         <input
                           type="text"
                           class="form-control"
@@ -423,8 +420,10 @@
                           placeholder="Enter name of warehouse"
                         />
                       </div>
-                      <div class="form-group">
-                        <label for="create-location">Location</label>
+                      <div class="mb-3">
+                        <label for="create-location" class="form-label"
+                          >Location</label
+                        >
                         <input
                           type="text"
                           class="form-control"
@@ -432,8 +431,10 @@
                           placeholder="Enter location"
                         />
                       </div>
-                      <div class="form-group">
-                        <label for="create-capacity">Capacity</label>
+                      <div class="mb-3">
+                        <label for="create-capacity" class="form-label"
+                          >Capacity</label
+                        >
                         <input
                           type="number"
                           class="form-control"
@@ -441,9 +442,11 @@
                           placeholder="Enter capacity"
                         />
                       </div>
-                      <div class="form-group">
-                        <label for="count-lead">Assign Count Lead</label>
-                        <select class="form-control" id="count-lead">
+                      <div class="mb-3">
+                        <label for="count-lead" class="form-label"
+                          >Assign Count Lead</label
+                        >
+                        <select class="form-select" id="count-lead">
                           <option value="1" selected>Assign Later</option>
                           <option value="2">John Abe</option>
                           <option value="3">Big Ade</option>
@@ -465,7 +468,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/main.js"></script>
