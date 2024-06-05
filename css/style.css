@@ -49,6 +49,10 @@ a {
 img {
   max-width: 100%;
 }
+a,
+a:hover {
+  text-decoration: none;
+}
 input:focus,
 button:focus,
 a:focus {
@@ -63,6 +67,9 @@ a:hover {
 }
 .text-success {
   color: #1eb564;
+}
+.text-green {
+  color: var(--color-secondary);
 }
 .text-black {
   color: #000;
@@ -412,6 +419,9 @@ a[data-toggle="collapse"] {
   border-radius: 50%;
   margin-right: 5px;
 }
+.name-icon.large {
+  padding: 1.2rem 1.5rem;
+}
 .settings .name-icon {
   width: 45px;
   height: 45px;
@@ -623,9 +633,9 @@ td {
   margin: 0.5rem 0;
 }
 
-.modal button {
+/* .modal button {
   width: 120px;
-}
+} */
 .invoice-card {
   padding: 1rem 1.5rem;
   border: 2px solid var(--color-primary-lighter);
